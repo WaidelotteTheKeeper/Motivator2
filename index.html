@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Мотивационная страница</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #message {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+  </style>
+  <script>
+    // Вставьте сюда скрипт на JavaScript
+    // с функцией motivate()
+    // и массивами beginnings, middles, endings
+  </script>
+</head>
+<body>
+  <h1>Мотивационная страница</h1>
+  <button onclick="motivate()">Сгенерировать сообщение</button>
+  <p id="message"></p>
+
+  <script>
+    // Функция для обновления содержимого элемента с id="message"
+    function updateMessage(text) {
+      document.getElementById("message").textContent = text;
+    }
+    
+    // Функция motivate(), которая обновляет сообщение на странице
+    function motivate() {
+      const randomBeginningIndex = Math.floor(Math.random() * beginnings.length);
+      const randomMiddleIndex = Math.floor(Math.random() * middles.length);
+      const randomEndingIndex = Math.floor(Math.random() * endings.length);
+      
+      const beginning = beginnings[randomBeginningIndex];
+      const middle = middles[randomMiddleIndex];
+      const ending = endings[randomEndingIndex];
+      
+      const message = `${beginning} ${middle} ${ending}`;
+      updateMessage(message);
+    }
+  </script>
+</body>
+</html>
